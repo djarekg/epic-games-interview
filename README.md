@@ -1,4 +1,4 @@
-# Welcome to Epic Games Interview Repo 🎉
+# Welcome to the Epic Games Interview Repo 🎉
 
 Each branch on this repo uses React 19 with a different framework or library. Below is a list of branches and their corresponding framework:
 
