@@ -3,7 +3,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "setup": "rimraf -g **/node_modules package-lock.json && npm install"
+    "setup": "rimraf node_modules package-lock.json && npm i"
   },
   "devDependencies": {
     "@eslint/css": "^0.10.0",
@@ -17,5 +17,10 @@
     "rimraf": "^6.0.1",
     "typescript": "^5.9.2",
     "typescript-eslint": "^8.38.0"
+  },
+  "overrides": {
+    "typescript-eslint": {
+      "typescript": "$typescript"
+    }
   }
 }
