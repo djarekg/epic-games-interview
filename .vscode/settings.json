@@ -151,5 +151,5 @@
   "[xml]": {
     "editor.defaultFormatter": "redhat.vscode-xml"
   },
-  "cSpell.words": ["griffel", "isbot", "presetenv"]
+  "cSpell.words": ["GNEWS", "griffel", "IMDB", "isbot", "OMDB", "presetenv", "VITE"]
 }

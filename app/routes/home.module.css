@@ -2,11 +2,15 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   min-height: 100vh;
+  padding: 2rem;
+
+  &:has(.loading) {
+    justify-content: center;
+  }
 }
 
-.result {
-  font-size: 1.5rem;
-  font-weight: bold;
+.loading {
+  font-size: 2rem;
+  color: oklch(70.4% 0.04 256.788);
 }

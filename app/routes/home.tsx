@@ -1,12 +1,14 @@
-import { useState } from 'react';
+import { getMoviesByTitle } from '@/api/free-apis.js';
+import DataViewer from '@/components/data-viewer/data-viewer.js';
+import { Suspense } from 'react';
 import styles from './home.module.css';
 
 export default function Home() {
-  const [result, setResult] = useState('N/A');
-
   return (
     <div className={styles.container}>
-      <span className={styles.result}>Result: {result}</span>
+      <Suspense fallback={<div className={`${styles.loading} loading`}>Loading...</div>}>
+        <DataViewer dataPromise={getMoviesByTitle('Inception')} />
+      </Suspense>
     </div>
   );
 }
