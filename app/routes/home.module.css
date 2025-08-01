@@ -12,5 +12,27 @@
 
 .loading {
   font-size: 2rem;
-  color: oklch(70.4% 0.04 256.788);
+  color: #ffffff;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 1.5rem;
+  width: 100%;
+  min-height: 100vh;
+}
+
+.image {
+  img {
+    width: 100%;
+    height: auto;
+    border-radius: 0.5rem;
+  }
+}
+
+.dataViewer {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
