@@ -1,4 +1,4 @@
-import { getMoviesByTitle } from '@/api/free-apis.js';
+import { getMoviesByTitle } from '@/api/apis.js';
 import DataViewer from '@/components/data-viewer/data-viewer.js';
 import { Suspense } from 'react';
 import styles from './home.module.css';
