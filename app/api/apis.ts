@@ -1,12 +1,38 @@
-/**
- * Calls the free IMDB API to fetch movies by title.
- * @param {string} title - The title of the movie to search for.
- */
-export const getMoviesByTitle = async (title: string) => {
-  const response = await fetch(`${import.meta.env.VITE_IMDB_API}?&q=${encodeURIComponent(title)}`);
+export const getPlaces = async (places: string) => {
+  const response = await fetch(
+    `https://geocode.maps.co/search?q=${encodeURIComponent(places)}&api_key=`
+  );
 
   if (!response.ok) {
-    throw new Error(`Error fetching movies: ${response.statusText}`);
+    throw new Error(`Error fetching places: ${response.statusText}`);
+  }
+
+  return response.json();
+};
+
+export const getPoints = async (coord: string) => {
+  const response = await fetch(`https://api.weather.gov/points/${encodeURIComponent(coord)}`);
+
+  if (!response.ok) {
+    throw new Error(`Error fetching points: ${response.statusText}`);
+  }
+
+  return response.json();
+};
+
+export type GridDetails = {
+  properties: {
+    periods: Array<{ name: string; temperature: number; temperatureUnit: string; icon: string }>;
+  };
+};
+
+export const getGridDetails = async (gridId: string, gridCoord: string): Promise<GridDetails> => {
+  const response = await fetch(
+    `https://api.weather.gov/gridpoints/${encodeURIComponent(gridId)}/${encodeURIComponent(gridCoord)}/forecast`
+  );
+
+  if (!response.ok) {
+    throw new Error(`Error fetching grid details: ${response.statusText}`);
   }
 
   return response.json();
